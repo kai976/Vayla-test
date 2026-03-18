@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lotto Number Generator</title>
-    <link href='/style.css' rel='stylesheet'>
+    <link href="/style.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
+        <div class="toolbar">
+            <span class="theme-label">Theme</span>
+            <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+                <span class="theme-toggle-text">Light Mode</span>
+            </button>
+        </div>
         <h1>Lotto Number Generator</h1>
+        <p class="subtitle">Generate a fresh set of numbers in the theme you prefer.</p>
         <div class="lotto-display"></div>
         <button class="generate-btn">Generate Numbers</button>
     </div>
