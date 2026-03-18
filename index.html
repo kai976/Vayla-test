@@ -14,10 +14,51 @@
                 <span class="theme-toggle-text">Light Mode</span>
             </button>
         </div>
-        <h1>Lotto Number Generator</h1>
-        <p class="subtitle">Generate a fresh set of numbers in the theme you prefer.</p>
-        <div class="lotto-display"></div>
-        <button class="generate-btn">Generate Numbers</button>
+
+        <section class="card lotto-card">
+            <h1>Lotto Number Generator</h1>
+            <p class="subtitle">Generate a fresh set of numbers in the theme you prefer.</p>
+            <div class="lotto-display"></div>
+            <button class="generate-btn">Generate Numbers</button>
+        </section>
+
+        <section class="card partnership-card">
+            <div class="section-heading">
+                <span class="eyebrow">Partnership</span>
+                <h2>Formspree inquiry form</h2>
+            </div>
+            <p class="subtitle form-copy">Use this form to collect partnership requests. Replace <code>YOUR_FORM_ID</code> with your actual Formspree form ID.</p>
+            <form class="partnership-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <label>
+                    Name
+                    <input type="text" name="name" placeholder="Your name" required>
+                </label>
+                <label>
+                    Email
+                    <input type="email" name="email" placeholder="you@company.com" required>
+                </label>
+                <label>
+                    Company
+                    <input type="text" name="company" placeholder="Company or project name">
+                </label>
+                <label>
+                    Partnership Type
+                    <select name="partnership_type" required>
+                        <option value="" selected disabled>Select a category</option>
+                        <option value="brand">Brand collaboration</option>
+                        <option value="creator">Creator partnership</option>
+                        <option value="distribution">Music distribution</option>
+                        <option value="investment">Investment / strategic</option>
+                    </select>
+                </label>
+                <label>
+                    Message
+                    <textarea name="message" rows="5" placeholder="Tell us about the collaboration you have in mind." required></textarea>
+                </label>
+                <input type="hidden" name="_subject" value="New VAYLA partnership inquiry">
+                <button class="generate-btn form-submit" type="submit">Send Inquiry</button>
+            </form>
+        </section>
     </div>
     <script defer type="text/javascript" src="/main.js"></script>
 </body>

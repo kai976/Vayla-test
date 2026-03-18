@@ -2,6 +2,8 @@
     --bg-primary: #f3f6fb;
     --bg-secondary: #ffffff;
     --bg-accent: #e7f8f2;
+    --bg-muted: #eef3f9;
+    --border-color: rgba(24, 33, 47, 0.08);
     --text-primary: #18212f;
     --text-secondary: #5b6575;
     --shadow-color: rgba(15, 23, 42, 0.12);
@@ -16,6 +18,8 @@ body[data-theme='dark'] {
     --bg-primary: #08131a;
     --bg-secondary: #112029;
     --bg-accent: #16313b;
+    --bg-muted: #132731;
+    --border-color: rgba(244, 251, 255, 0.08);
     --text-primary: #f4fbff;
     --text-secondary: #9fb4bf;
     --shadow-color: rgba(0, 0, 0, 0.38);
@@ -33,9 +37,6 @@ body[data-theme='dark'] {
 body {
     margin: 0;
     font-family: "Segoe UI", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     padding: 1.5rem;
     background: radial-gradient(circle at top, var(--bg-accent), var(--bg-primary) 55%);
@@ -44,13 +45,22 @@ body {
 }
 
 .container {
-    width: min(100%, 460px);
-    text-align: center;
+    width: min(100%, 560px);
+    margin: 0 auto;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.card {
     background-color: var(--bg-secondary);
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 24px 60px var(--shadow-color);
     transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lotto-card {
+    text-align: center;
 }
 
 .toolbar {
@@ -61,7 +71,8 @@ body {
 }
 
 .theme-label,
-.subtitle {
+.subtitle,
+.partnership-form label {
     color: var(--text-secondary);
 }
 
@@ -86,14 +97,39 @@ body {
     transform: translateY(-1px);
 }
 
-h1 {
+h1,
+h2 {
     margin: 0;
+}
+
+h1 {
     font-size: clamp(1.9rem, 4vw, 2.4rem);
+}
+
+h2 {
+    font-size: 1.5rem;
 }
 
 .subtitle {
     margin: 0.85rem 0 2rem;
     line-height: 1.5;
+}
+
+.form-copy {
+    margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+    display: inline-flex;
+    margin-bottom: 0.5rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    background-color: var(--bg-muted);
+    color: var(--button-bg);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .lotto-display {
@@ -135,8 +171,64 @@ h1 {
     transform: translateY(-1px);
 }
 
+.partnership-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.partnership-form label {
+    display: grid;
+    gap: 0.45rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.partnership-form input,
+.partnership-form select,
+.partnership-form textarea {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--bg-muted);
+    color: var(--text-primary);
+    padding: 0.9rem 1rem;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.25s ease;
+}
+
+.partnership-form input::placeholder,
+.partnership-form textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+.partnership-form input:focus,
+.partnership-form select:focus,
+.partnership-form textarea:focus {
+    border-color: var(--button-bg);
+}
+
+.partnership-form textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.form-submit {
+    margin-top: 0.25rem;
+}
+
+code {
+    padding: 0.15rem 0.35rem;
+    border-radius: 6px;
+    background-color: var(--bg-muted);
+}
+
 @media (max-width: 520px) {
-    .container {
+    body {
+        padding: 1rem;
+    }
+
+    .card {
         padding: 1.4rem;
     }
 
