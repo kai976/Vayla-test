@@ -242,3 +242,31 @@ code {
         width: 100%;
     }
 }
+
+.site-footer {
+    width: min(100%, 560px);
+    margin: 0 auto 2rem;
+    padding: 0 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.site-footer a,
+.policy-card a {
+    color: var(--button-bg);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.site-footer a:hover,
+.policy-card a:hover {
+    text-decoration: underline;
+}
+
+.policy-card p {
+    margin: 0 0 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
